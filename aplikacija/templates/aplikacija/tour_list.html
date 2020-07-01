@@ -1,0 +1,38 @@
+{% extends 'aplikacija/base.html' %}
+
+{% block content %}
+
+<table>
+{% for tour in tour_list %}
+{% if forloop.counter0|divisibleby:3 %} <tr> {% endif %}
+    {% if tour.available_beds > 0 %}
+    <td>
+<div class="tourTab">
+<a href="{% url 'tour_detail' pk=tour.pk %}">
+{% load static %}
+<img src='{{ tour.photo.url }}' alt="photo" width="200" height="133">
+<h2>{{tour.destination}}, {{tour.country}}</h2>
+<h3>${{tour.price}}</h3>
+</a>
+</div>
+
+</td>
+    {% else %}
+    <td>
+    <div class="tourTab">
+        <h3 class="redText">SOLD OUT!</h3>
+        {% load static %}
+        <img src='{{ tour.photo.url }}' alt="photo" width="200" height="133">
+        <h2>{{tour.destination}}, {{tour.country}}</h2>
+        <h3>${{tour.price}}</h3>
+        </a>
+        </div>
+    </td>
+    {% endif %}
+{% if forloop.counter|divisibleby:3 or forloop.last %} </tr> {% endif %}
+{% endfor %} 
+</table>
+{% endblock %}
+
+
+

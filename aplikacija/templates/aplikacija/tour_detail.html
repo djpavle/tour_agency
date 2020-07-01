@@ -1,0 +1,25 @@
+{% extends 'aplikacija/base.html' %}
+
+{% block content %}
+
+<div class="tourDetailTab">
+
+    <h1>{{tour.destination}} , {{tour.country}}</h1>
+    
+    <h3>${{tour.price}}</h3>
+    <h3>Date of departure: {{tour.date_of_arrival}}</h3>
+    <h3>Total days: {{tour.total_days}}</h3>
+    {% if tour.available_beds <= 15 %}
+    <h3 class="redText">Only {{tour.available_beds}} Beds left! </h3>
+    {% else %}
+    <h3> Beds left: {{tour.available_beds}} </h3>
+    {% endif %}
+    <hr>
+    <div id="description">
+    <p>{{tour.description}}</p>
+</div>
+</div>
+<a class="btn" href="{% url 'book_tour' %}"> BOOK NOW </a>
+<a class="btn" href="{% url 'tour_list' %}">BACK TO ALL TOURS</a> 
+
+{% endblock %}

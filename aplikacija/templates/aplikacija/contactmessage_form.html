@@ -1,0 +1,15 @@
+{% extends 'aplikacija/base.html' %}
+
+{% block content %}
+
+
+
+
+<form method="POST" action="{% url 'thanks' %}" class="tourDetailTab clientForm">
+    <h1>Please enter your message here!</h1>
+{% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit" class="btn">Send</button>
+</form>
+{% endblock %}
