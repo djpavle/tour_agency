@@ -2,11 +2,11 @@
 
 {% block content %}
 
-
+{{infoMsg}}
 
 
 <form method="POST" action="{% url 'thanks' %}" class="tourDetailTab clientForm">
-    <h1>Please enter your message here!</h1>
+    <h1>Please tell us how we can be of assistance</h1>
 {% csrf_token %}
     {{ form.as_p }}
 

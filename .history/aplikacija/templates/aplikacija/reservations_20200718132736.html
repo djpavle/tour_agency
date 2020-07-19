@@ -1,0 +1,39 @@
+{% extends 'aplikacija/base.html' %}
+
+{% block content %}
+
+<h2 id="mostPopularTitle">Reservation Menu</h2>
+<div id=topThree>
+    
+    <table>
+        <tr>
+    <td>
+    <div class="tourTab ">
+        <a href="{% url 'tour_detail' pk=tour.pk %}">
+        
+        <h2>Make Reservation</h2>
+        </a>
+    </div>
+</td>
+<td>
+    <div class="tourTab ">
+        <a href="{% url 'tour_detail' pk=tour.pk %}">
+        
+        <h2>Check My Reservation</h2>
+        </a>
+    </div>
+</td>
+<td>
+    <div class="tourTab ">
+        <a href="{% url 'tour_detail' pk=tour.pk %}">
+        
+        <h2>Cancel Reservation</h2>
+        </a>
+    </div>
+</td>
+   
+</tr>
+</table>
+</div>
+
+{% endblock %}

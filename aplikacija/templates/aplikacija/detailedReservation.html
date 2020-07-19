@@ -1,0 +1,27 @@
+{% extends 'aplikacija/base.html' %}
+
+
+{% block content %}
+
+<div class="tourDetailTab mostPopularBorder">
+    <h1>Client Details</h1>
+    <h2>{{{client.name}} {{client.surname}}</h2>
+    <h3>{{client.email}}</h3>
+    <h3>Total Guests : {{client.number_of_guests}}</h3>
+    <h3>Total Price: {{client.total_price}}</h3>
+    <h3>Reservation Code : {{client.reservation_code}}</h3>
+
+
+
+    <h1>Tour Details</h1>
+    <h2>{{client.tour.destination}} , {{client.tour.country}}</h1>
+    <h3>${{client.tour.price}}</h3>
+    <h3>Date of departure: {{client.tour.date_of_arrival}}</h3>
+    <h3>Total days: {{client.tour.total_days}}</h3>
+   
+    
+</div>
+<a class="btn" href="{% url 'home' %}"> HOME </a>
+
+
+{% endblock %}

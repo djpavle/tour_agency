@@ -1,0 +1,26 @@
+{% extends 'aplikacija/base.html' %}
+
+{% block content %}
+
+<h2 id="mostPopularTitle">Reservation Menu</h2>
+<div id=topThree>
+    
+    <table>
+        <tr>
+    {% for tour in top_three %}
+    <td>
+    <div class="tourTab mostPopularBorder">
+        <a href="{% url 'tour_detail' pk=tour.pk %}">
+        {% load static %}
+        <img src='{{ tour.photo.url }}' alt="photo" width="200" height="133">
+        <h2>{{tour.destination}}, {{tour.country}}</h2>
+        <h3>${{tour.price}}</h3>
+        </a>
+    </div>
+</td>
+    {% endfor %}
+</tr>
+</table>
+</div>
+
+{% endblock %}
