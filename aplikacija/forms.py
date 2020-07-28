@@ -30,12 +30,3 @@ class ContactForm(forms.ModelForm):
         }
 
 
-class ReservationForm(forms.ModelForm):
-
-    class Meta:
-
-        model = Client
-        fields = ('reservation_code',)
-        widgets = {
-            'reservation_code':forms.TextInput(attrs={'class':'clientFormField'})
-        }

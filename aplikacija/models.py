@@ -19,6 +19,11 @@ class  Tour(models.Model):
         self.available_beds -= number_of_guests
         return self.available_beds
 
+    def cancel_reservation(self,number_of_guests):
+
+        self.available_beds+=number_of_guests
+        self.confirmed_reservations-=number_of_guests
+
     def update_confirmed_reservations(self,number_of_guests):
 
         self.confirmed_reservations+= number_of_guests

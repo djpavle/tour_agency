@@ -32,5 +32,3 @@ class NewClientView(APIView):
             number_of_guests = serializer.data.get('number_of_guests')
             tour = serializer.data.get('tour')
             return Response(ClientSerializer.create(request.validated_data))
-        else:
-            return Response({'error':'invalid data'})
