@@ -3,7 +3,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEMPLATE_DIR = os.path.join(BASE_DIR,'aplikacija/templates')
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'aplikacija/templates')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -20,7 +20,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -70,8 +70,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'turisticka_agencija',
         'USER': 'root',
-        'HOST' : 'localhost',
-        'PASSWORD' : 'lubenica901'
+        'HOST': 'localhost',
+        'PASSWORD': 'lubenica901'
     }
 }
 
@@ -126,4 +126,10 @@ EMAIL_HOST_PASSWORD = 'globusglobus222'
 EMAIL_PORT = 587
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'aplikacija/static')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'aplikacija/static')
+
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
